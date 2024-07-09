@@ -420,8 +420,8 @@ async def account_login(bot: Client, m: Message):
                     url = url.replace("https://sec1.pw.live/","https://d1d34p8vz63oiq.cloudfront.net/")
                     print(url)
                 else: 
-                    url = f"https://hkdrm632.onrender.com/?v={url}&quality={res}&start={start_unix}&end={end_unix}&token={token}"
-            print(f"Constructed URL: {url}")    
+                    url = url    
+
                 print("mpd check")
                 key = await helper.get_drm_keys(url)
                 print(key)

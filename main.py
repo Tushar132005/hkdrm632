@@ -420,7 +420,8 @@ async def account_login(bot: Client, m: Message):
                     url = url.replace("https://sec1.pw.live/","https://d1d34p8vz63oiq.cloudfront.net/")
                     print(url)
                 else: 
-                    url = url    
+                    url = f"https://shed-ext12drm-eiyb.onrender.com/?v={url}&quality={res}&start={start_unix}&end={end_unix}&token={token}"
+            print(f"Constructed URL: {url}")    
                 print("mpd check")
                 key = await helper.get_drm_keys(url)
                 print(key)
@@ -457,7 +458,7 @@ async def account_login(bot: Client, m: Message):
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1002097681261)
+                        await copy.copy(chat_id = -1002249382208)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
